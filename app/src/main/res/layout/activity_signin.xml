@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".signin.SignInActivity">
+    tools:context=".signin.SignInActivity" >
 
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_marginTop="48dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent">
+      app:layout_constraintTop_toTopOf="parent" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,54 +29,49 @@
           app:layout_constraintTop_toTopOf="parent" />
 
       <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/et_signin_username"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-          android:layout_marginLeft="16dp"
-          android:layout_marginRight="16dp"
-          android:hint="@string/register_number"
-          app:boxStrokeColor="@color/karunyaBlue"
-          app:hintTextColor="@color/black"
-          app:layout_constraintEnd_toEndOf="parent"
-          android:theme="@style/AppTheme"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/login_image"
-          >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:padding="16dp"
-            android:drawableLeft="@drawable/person"
-            android:drawablePadding="8dp"
-            />
-      </com.google.android.material.textfield.TextInputLayout>
-
-      <com.google.android.material.textfield.TextInputLayout
           android:id="@+id/et_signin_password"
-          android:theme="@style/AppTheme"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:layout_marginTop="8dp"
           android:layout_marginLeft="16dp"
           android:layout_marginRight="16dp"
           android:hint="@string/password"
+          android:theme="@style/AppTheme"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/et_signin_username"
-          >
+          app:layout_constraintTop_toBottomOf="@+id/et_signin_username" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:padding="16dp"
             android:drawableLeft="@drawable/password"
             android:drawablePadding="8dp"
-            />
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="16dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/et_signin_username"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          android:layout_marginTop="16dp"
+          android:hint="@string/register_number"
+          android:theme="@style/AppTheme"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/login_image"
+          app:boxStrokeColor="@color/karunyaBlue"
+          app:hintTextColor="@color/black" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/person"
+            android:drawablePadding="8dp"
+            android:maxLines="1"
+            android:padding="16dp" />
       </com.google.android.material.textfield.TextInputLayout>
 
       <Button
@@ -84,14 +79,13 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_margin="16dp"
+          android:background="@color/karunyaBlue"
           android:padding="16dp"
           android:text="@string/sign_in"
           android:textColor="@color/white"
-          android:background="@color/karunyaBlue"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/et_signin_password" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
   </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
