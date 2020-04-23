@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.khacks.kapp_frontend"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -37,4 +37,13 @@ dependencies {
 
     //new material design library
     implementation 'com.google.android.material:material:1.2.0-alpha05'
+
+    //ViewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    //navigation
+    //latest dependeny from developer.android.com
+    def nav_version = "2.3.0-alpha04"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }

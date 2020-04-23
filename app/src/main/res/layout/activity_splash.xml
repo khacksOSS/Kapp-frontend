@@ -7,12 +7,12 @@
     android:background="@color/white"
     tools:context=".splash.SplashActivity">
 
-    <ImageView
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:src="@drawable/karunya_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <ImageView
+      android:layout_width="220dp"
+      android:layout_height="220dp"
+      android:src="@drawable/karunya_logo"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
