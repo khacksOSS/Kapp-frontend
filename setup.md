@@ -10,7 +10,7 @@ Before running the project *locally* on your machine make sure you have the foll
 
 ## Installation
 
-1. Update all the libraries and sync the project (might take a minute).
+1. Update the libraries and sync the project (might take a minute).
 
 2. If all the Gradle build succeeds, you can run the app on an emulator or your own Android device.
 
