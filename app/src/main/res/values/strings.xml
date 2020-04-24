@@ -12,5 +12,8 @@
   <string name="sample_date">Wed, Apr 22, 2020</string>
   <string name="my_karunya">My Karunya</string>
   <string name="announcements">Announcements</string>
-
+  <string name="all">All</string>
+  <string name="exams">Exams</string>
+  <string name="classes">Classes</string>
+  <string name="general">General</string>
 </resources>
