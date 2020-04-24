@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.ActionBar
-import com.khacks.kapp_frontend.MainActivity
 import com.khacks.kapp_frontend.R
-import com.khacks.kapp_frontend.signin.SignInActivity
+import com.khacks.kapp_frontend.welcome.WelcomeActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
 
   private fun delayFunction() {
     Handler().postDelayed({
-      startActivity(Intent(this@SplashActivity, SignInActivity::class.java))
+      startActivity(Intent(this@SplashActivity, WelcomeActivity::class.java))
       finish()
     }, 4000)
   }
