@@ -1,9 +1,16 @@
 <resources>
   <string name="app_name">Kapp-frontend</string>
+
+  <!-- Strings used in the app -->
   <string name="sign_in">Sign In</string>
   <string name="register_number">Register Number</string>
   <string name="password">Password</string>
   <string name="get_started">Get Started</string>
   <string name="dashboard">Dashboard</string>
   <string name="starred">Starred</string>
+  <string name="important">Important</string>
+  <string name="sample_date">Wed, Apr 22, 2020</string>
+  <string name="my_karunya">My Karunya</string>
+  <string name="announcements">Announcements</string>
+
 </resources>
