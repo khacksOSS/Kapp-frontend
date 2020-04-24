@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Kapp-frontend</string>
-    <string name="sign_in">Sign In</string>
-    <string name="register_number">Register Number</string>
-    <string name="password">Password</string>
-    <string name="get_started">Get Started</string>
+  <string name="app_name">Kapp-frontend</string>
+  <string name="sign_in">Sign In</string>
+  <string name="register_number">Register Number</string>
+  <string name="password">Password</string>
+  <string name="get_started">Get Started</string>
 </resources>
