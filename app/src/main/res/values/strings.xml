@@ -4,4 +4,6 @@
   <string name="register_number">Register Number</string>
   <string name="password">Password</string>
   <string name="get_started">Get Started</string>
+  <string name="dashboard">Dashboard</string>
+  <string name="starred">Starred</string>
 </resources>
