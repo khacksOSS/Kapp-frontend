@@ -5,11 +5,11 @@
 
   <fragment
       android:id="@+id/dashboardFragment"
-      android:name="com.khacks.kapp_frontend.DashboardFragment"
+      android:name="com.khacks.kapp_frontend.home.DashboardFragment"
       android:label="HomeFragment" />
 
   <fragment
       android:id="@+id/starredFragment"
-      android:name="com.khacks.kapp_frontend.StarredFragment"
+      android:name="com.khacks.kapp_frontend.home.StarredFragment"
       android:label="ElectionFragment" />
 </navigation>
