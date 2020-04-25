@@ -40,8 +40,4 @@ class DashboardFragment : Fragment() {
     val dataSource = DataSource.createDataSet()
     adapter.submitItems(dataSource)
   }
-
-  private fun initRecyclerView(view: View) {
-
-  }
 }
