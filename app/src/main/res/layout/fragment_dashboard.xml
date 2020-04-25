@@ -32,17 +32,24 @@
       app:layout_constraintTop_toBottomOf="@id/tv_important"
       />
 
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/dash_recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/tv_date_dashboard"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
   <TextView
       android:id="@+id/tv_my_karunya"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginLeft="16dp"
-      android:layout_marginTop="56dp"
       android:text="@string/my_karunya"
       android:textColor="@color/black"
       android:textSize="22sp"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/tv_date_dashboard"
+      app:layout_constraintTop_toBottomOf="@id/dash_recycler_view"
       />
 
   <LinearLayout

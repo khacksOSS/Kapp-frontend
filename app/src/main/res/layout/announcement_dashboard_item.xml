@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/announcement_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardElevation="0dp"
+    style="@style/CardView.Light"
+    >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"
+      android:background="@color/white"
+      android:padding="16dp"
+      >
+
+    <ImageView
+        android:id="@+id/iv_date_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/iv_tag_color_dash"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/tag_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_dash"
+        />
+
+    <TextView
+        android:id="@+id/tv_title_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sample_date"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_date_dash"
+        />
+
+    <TextView
+        android:id="@+id/tv_date_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="@string/sample_date"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_date_dash"
+        app:layout_constraintStart_toEndOf="@id/iv_date_dash"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_tag_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/exams"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_tag_color_dash"
+        app:layout_constraintStart_toEndOf="@id/iv_tag_color_dash"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_dash"
+        />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

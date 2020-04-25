@@ -48,4 +48,8 @@ dependencies {
 
   //circular image library
   implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+  // Recyclerview
+  def recyclerview_version = "1.0.0"
+  implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
 }
