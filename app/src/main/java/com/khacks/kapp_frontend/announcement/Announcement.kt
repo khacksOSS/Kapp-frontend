@@ -1,7 +1,11 @@
 package com.khacks.kapp_frontend.announcement
 
 data class Announcement(
-  var date: String,
+  var tags: List<String>,
+  var id: String,
   var title: String,
-  var tag: String
+  var description: String,
+  var author: String,
+  var time: String,
+  var v: String
 )

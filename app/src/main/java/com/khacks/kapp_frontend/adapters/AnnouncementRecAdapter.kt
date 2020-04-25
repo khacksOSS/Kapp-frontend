@@ -49,9 +49,9 @@ class AnnouncementRecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     val tag = itemView.tv_tag_dash
 
     fun bind(announcement: Announcement) {
-      date.text = announcement.date
+      date.text = announcement.time
       title.text = announcement.title
-      tag.text = announcement.tag
+      tag.text = announcement.tags.get(0)
     }
   }
 }

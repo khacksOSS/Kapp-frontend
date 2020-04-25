@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.khacks.kapp_frontend.R
 import com.khacks.kapp_frontend.announcement.Announcement
+import com.khacks.kapp_frontend.R
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_date
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_number
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_tag
@@ -51,9 +51,9 @@ class AnnouncementARecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
     val number = itemView.tv_a_number
 
     fun bind(announcement: Announcement) {
-      date.text = announcement.date
+      date.text = announcement.time
       title.text = announcement.title
-      tag.text = announcement.tag
+      tag.text = announcement.tags.get(0)
       number.text = (adapterPosition + 1).toString()
     }
   }
