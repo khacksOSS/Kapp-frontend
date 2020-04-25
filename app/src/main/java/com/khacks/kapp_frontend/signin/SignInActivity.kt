@@ -16,7 +16,9 @@ class SignInActivity : AppCompatActivity() {
     customActionBar()
 
     bt_sigin.setOnClickListener {
-      startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+      var intent: Intent = Intent(this@SignInActivity, MainActivity::class.java)
+      intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+      startActivity(intent)
     }
   }
 
