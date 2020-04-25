@@ -9,7 +9,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".AnnouncementDetail"
+    <activity android:name=".announcementDetail.AnnouncementDetail"
         android:parentActivityName=".announcement.AnnouncementsActivity" />
     <activity
         android:name=".announcement.AnnouncementsActivity"

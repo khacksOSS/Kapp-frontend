@@ -65,5 +65,4 @@ class AnnouncementARecAdapter(var clickListener: OnAnnouncementClickListener) : 
   interface OnAnnouncementClickListener {
     fun onItemClick(item: Announcement, position: Int)
   }
-
 }

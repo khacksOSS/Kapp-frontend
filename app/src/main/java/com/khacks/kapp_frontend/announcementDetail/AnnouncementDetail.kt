@@ -1,13 +1,12 @@
-package com.khacks.kapp_frontend
+package com.khacks.kapp_frontend.announcementDetail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import com.khacks.kapp_frontend.R.drawable
-import kotlinx.android.synthetic.main.activity_announcement_detail.tv_author
+import com.khacks.kapp_frontend.R.layout
 import kotlinx.android.synthetic.main.activity_announcement_detail.tv_author_content
 import kotlinx.android.synthetic.main.activity_announcement_detail.tv_desc_content
-import kotlinx.android.synthetic.main.activity_announcement_detail.tv_time
 import kotlinx.android.synthetic.main.activity_announcement_detail.tv_time_content
 import kotlinx.android.synthetic.main.activity_announcement_detail.tv_title_content
 
@@ -17,7 +16,7 @@ class AnnouncementDetail : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_announcement_detail)
+    setContentView(layout.activity_announcement_detail)
     customActionBar()
 
     tv_author_content.text = intent.getStringExtra("author")

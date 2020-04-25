@@ -11,7 +11,8 @@ import kotlinx.android.synthetic.main.announcement_dashboard_item.view.tv_date_d
 import kotlinx.android.synthetic.main.announcement_dashboard_item.view.tv_tag_dash
 import kotlinx.android.synthetic.main.announcement_dashboard_item.view.tv_title_dash
 
-class AnnouncementRecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AnnouncementRecAdapter(var clickListener: OnDashAnnouncementClickListener) :
+  RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
   private var announcementList: List<Announcement> = ArrayList()
 
@@ -32,7 +33,7 @@ class AnnouncementRecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     when (holder) {
       is AnnouncementViewHolder -> {
-        holder.bind(announcementList.get(position))
+        holder.bind(announcementList.get(position), clickListener)
       }
     }
   }
@@ -48,10 +49,18 @@ class AnnouncementRecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     val title = itemView.tv_title_dash
     val tag = itemView.tv_tag_dash
 
-    fun bind(announcement: Announcement) {
+    fun bind(announcement: Announcement, action: OnDashAnnouncementClickListener) {
       date.text = announcement.time
       title.text = announcement.title
       tag.text = announcement.tags.get(0)
+
+      itemView.setOnClickListener {
+        action.onItemClick(announcement, adapterPosition)
+      }
     }
+  }
+
+  interface OnDashAnnouncementClickListener {
+    fun onItemClick(item: Announcement, position: Int)
   }
 }

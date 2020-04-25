@@ -12,6 +12,8 @@ import com.khacks.kapp_frontend.announcement.Announcement
 import com.khacks.kapp_frontend.adapters.AnnouncementRecAdapter
 import com.khacks.kapp_frontend.announcement.AnnouncementsActivity
 import com.khacks.kapp_frontend.R.layout
+import com.khacks.kapp_frontend.adapters.AnnouncementRecAdapter.OnDashAnnouncementClickListener
+import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.networking.Message
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
@@ -22,7 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : Fragment(), OnDashAnnouncementClickListener {
 
   private lateinit var adapter : AnnouncementRecAdapter
   val dataSource: ArrayList<Announcement> = ArrayList()
@@ -63,7 +65,7 @@ class DashboardFragment : Fragment() {
           )
         }
         view.dash_recycler_view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapter = AnnouncementRecAdapter()
+        adapter = AnnouncementRecAdapter(this@DashboardFragment)
         view.dash_recycler_view.adapter = adapter
         adapter.submitItems(dataSource.toList())
       }
@@ -71,4 +73,12 @@ class DashboardFragment : Fragment() {
     return view
   }
 
+  override fun onItemClick(item: Announcement, position: Int) {
+    val intent = Intent(activity, AnnouncementDetail::class.java)
+    intent.putExtra("title", item.title)
+    intent.putExtra("time", item.time)
+    intent.putExtra("author", item.author)
+    intent.putExtra("desc", item.description)
+    startActivity(intent)
+  }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.khacks.kapp_frontend.AnnouncementDetail
+import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.networking.Message
 import com.khacks.kapp_frontend.R.drawable
