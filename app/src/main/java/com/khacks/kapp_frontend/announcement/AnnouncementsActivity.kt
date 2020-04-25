@@ -1,10 +1,12 @@
 package com.khacks.kapp_frontend.announcement
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.khacks.kapp_frontend.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.networking.Message
 import com.khacks.kapp_frontend.R.drawable
@@ -12,12 +14,13 @@ import com.khacks.kapp_frontend.R.layout
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
 import com.khacks.kapp_frontend.networking.ServerResponse
 import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter
+import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter.OnAnnouncementClickListener
 import kotlinx.android.synthetic.main.activity_announcements.announcements_recycler_view
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AnnouncementsActivity : AppCompatActivity() {
+class AnnouncementsActivity : AppCompatActivity(), OnAnnouncementClickListener {
 
   private lateinit var adapter : AnnouncementARecAdapter
   val dataSource: ArrayList<Announcement> = ArrayList()
@@ -69,7 +72,16 @@ class AnnouncementsActivity : AppCompatActivity() {
 
   private fun initRecyclerView() {
     announcements_recycler_view.layoutManager = LinearLayoutManager(this)
-    adapter = AnnouncementARecAdapter()
+    adapter = AnnouncementARecAdapter(this)
     announcements_recycler_view.adapter = adapter
+  }
+
+  override fun onItemClick(item: Announcement, position: Int) {
+    val intent = Intent(this@AnnouncementsActivity, AnnouncementDetail::class.java)
+    intent.putExtra("title", item.title)
+    intent.putExtra("time", item.time)
+    intent.putExtra("author", item.author)
+    intent.putExtra("desc", item.description)
+    startActivity(intent)
   }
 }

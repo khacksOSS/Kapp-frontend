@@ -17,4 +17,8 @@
   <string name="classes">Classes</string>
   <string name="general">General</string>
   <string name="one">1</string>
+  <string name="title">Title</string>
+  <string name="time">Time</string>
+  <string name="desc">Description</string>
+  <string name="author">Author</string>
 </resources>

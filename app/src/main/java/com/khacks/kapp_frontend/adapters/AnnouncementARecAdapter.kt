@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.announcement_item.view.tv_a_number
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_tag
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_title
 
-class AnnouncementARecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AnnouncementARecAdapter(var clickListener: OnAnnouncementClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
   private var announcementList : List<Announcement> = ArrayList()
 
@@ -33,7 +33,7 @@ class AnnouncementARecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     when (holder) {
       is AnnouncementViewHolder -> {
-        holder.bind(announcementList.get(position))
+        holder.bind(announcementList.get(position), clickListener)
       }
     }
   }
@@ -50,12 +50,20 @@ class AnnouncementARecAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
     val tag = itemView.tv_a_tag
     val number = itemView.tv_a_number
 
-    fun bind(announcement: Announcement) {
+    fun bind(announcement: Announcement, action: OnAnnouncementClickListener) {
       date.text = announcement.time
       title.text = announcement.title
       tag.text = announcement.tags.get(0)
       number.text = (adapterPosition + 1).toString()
+
+      itemView.setOnClickListener {
+        action.onItemClick(announcement, adapterPosition)
+      }
     }
+  }
+
+  interface OnAnnouncementClickListener {
+    fun onItemClick(item: Announcement, position: Int)
   }
 
 }

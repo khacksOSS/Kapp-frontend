@@ -9,12 +9,15 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
+    <activity android:name=".AnnouncementDetail"
+        android:parentActivityName=".announcement.AnnouncementsActivity" />
     <activity
         android:name=".announcement.AnnouncementsActivity"
         android:parentActivityName=".MainActivity" />
     <activity android:name=".welcome.WelcomeActivity" />
     <activity
         android:name=".signin.SignInActivity"
+        android:parentActivityName=".welcome.WelcomeActivity"
         android:theme="@style/AppTheme" />
     <activity android:name=".splash.SplashActivity">
       <intent-filter>
