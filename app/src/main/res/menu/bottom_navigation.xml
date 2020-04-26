@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/dashboardFragment"
+      android:icon="@drawable/dashboard"
+      android:title="@string/dashboard" />
+  <item
+      android:id="@+id/starredFragment"
+      android:icon="@drawable/starred"
+      android:title="@string/starred" />
+</menu>

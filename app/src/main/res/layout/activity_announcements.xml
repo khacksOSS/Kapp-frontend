@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".announcement.AnnouncementsActivity"
+    >
+
+  <com.google.android.material.chip.ChipGroup
+      android:id="@+id/chip_group"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:singleLine="true"
+      app:singleSelection="true"
+      >
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/all_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:checked="true"
+        android:gravity="center"
+        android:text="@string/all"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:chipBackgroundColor="@drawable/chip_bg"
+        app:chipStrokeColor="@color/gray"
+        app:chipStrokeWidth="2dp"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/classes_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/classes"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:chipBackgroundColor="@drawable/chip_bg"
+        app:chipStrokeColor="@color/gray"
+        app:chipStrokeWidth="2dp"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/exams_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/exams"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:chipBackgroundColor="@drawable/chip_bg"
+        app:chipStrokeColor="@color/gray"
+        app:chipStrokeWidth="2dp"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/general_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/general"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:chipBackgroundColor="@drawable/chip_bg"
+        app:chipStrokeColor="@color/gray"
+        app:chipStrokeWidth="2dp"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        />
+  </com.google.android.material.chip.ChipGroup>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/announcements_recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/chip_group"
+      />
+</androidx.constraintlayout.widget.ConstraintLayout>
