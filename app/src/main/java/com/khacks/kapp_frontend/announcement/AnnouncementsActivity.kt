@@ -8,13 +8,13 @@ import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
-import com.khacks.kapp_frontend.networking.Message
 import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.R.layout
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
 import com.khacks.kapp_frontend.networking.ServerResponse
 import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter
 import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter.OnAnnouncementClickListener
+import com.khacks.kapp_frontend.networking.Article
 import kotlinx.android.synthetic.main.activity_announcements.announcements_recycler_view
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,8 +39,8 @@ class AnnouncementsActivity : AppCompatActivity(), OnAnnouncementClickListener {
       }
 
       override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
-        val body = response?.body()
-        val announcements : List<Message>? = body?.message
+        val body = response.body()
+        val announcements : List<Article>? = body?.message!!.articles
 
         for (a in announcements.orEmpty()) {
           dataSource.add(

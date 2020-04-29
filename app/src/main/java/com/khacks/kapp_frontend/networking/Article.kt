@@ -1,6 +1,6 @@
 package com.khacks.kapp_frontend.networking
 
-data class Message(
+data class Article(
   var tags : List<String>,
   var _id : String,
   var title: String,

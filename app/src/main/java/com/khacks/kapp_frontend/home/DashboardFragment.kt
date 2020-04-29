@@ -14,8 +14,8 @@ import com.khacks.kapp_frontend.announcement.AnnouncementsActivity
 import com.khacks.kapp_frontend.R.layout
 import com.khacks.kapp_frontend.adapters.AnnouncementRecAdapter.OnDashAnnouncementClickListener
 import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
+import com.khacks.kapp_frontend.networking.Article
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
-import com.khacks.kapp_frontend.networking.Message
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
 import com.khacks.kapp_frontend.networking.ServerResponse
 import kotlinx.android.synthetic.main.fragment_dashboard.view.bt_announcements
@@ -49,7 +49,7 @@ class DashboardFragment : Fragment(), OnDashAnnouncementClickListener {
 
       override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
         val body = response?.body()
-        val announcements : List<Message>? = body?.message
+        val announcements : List<Article>? = body?.message!!.articles
 
         for (a in announcements.orEmpty()) {
           dataSource.add(

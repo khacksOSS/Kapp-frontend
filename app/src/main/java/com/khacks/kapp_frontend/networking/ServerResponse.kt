@@ -1,7 +1,7 @@
 package com.khacks.kapp_frontend.networking
 
-import com.khacks.kapp_frontend.networking.Message
+import com.khacks.kapp_frontend.home.Articles
 
 data class ServerResponse(
-  var message: List<Message>
+  var message: Articles
 )
