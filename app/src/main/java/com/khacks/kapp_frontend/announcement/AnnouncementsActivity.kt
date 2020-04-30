@@ -10,10 +10,9 @@ import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.R.layout
+import com.khacks.kapp_frontend.adapters.AnnActivityRecAdapter
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
 import com.khacks.kapp_frontend.dataClass.ServerResponse
-import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter
-import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter.OnAnnouncementClickListener
 import com.khacks.kapp_frontend.dataClass.Announcement
 import com.khacks.kapp_frontend.dataClass.Article
 import kotlinx.android.synthetic.main.activity_announcements.announcements_recycler_view
@@ -21,9 +20,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AnnouncementsActivity : AppCompatActivity(), OnAnnouncementClickListener {
+class AnnouncementsActivity : AppCompatActivity() {
 
-  private lateinit var adapter : AnnouncementARecAdapter
+  private lateinit var adapter : AnnActivityRecAdapter
   val dataSource: ArrayList<Announcement> = ArrayList()
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +56,7 @@ class AnnouncementsActivity : AppCompatActivity(), OnAnnouncementClickListener {
           )
         }
         initRecyclerView()
-        adapter.submitItems(dataSource.toList())
+        adapter.setAnnouncements(dataSource)
       }
     })
   }
@@ -73,16 +72,18 @@ class AnnouncementsActivity : AppCompatActivity(), OnAnnouncementClickListener {
 
   private fun initRecyclerView() {
     announcements_recycler_view.layoutManager = LinearLayoutManager(this)
-    adapter = AnnouncementARecAdapter(this)
+    announcements_recycler_view.setHasFixedSize(true)
+    adapter = AnnActivityRecAdapter()
     announcements_recycler_view.adapter = adapter
-  }
-
-  override fun onItemClick(item: Announcement, position: Int) {
-    val intent = Intent(this@AnnouncementsActivity, AnnouncementDetail::class.java)
-    intent.putExtra("title", item.title)
-    intent.putExtra("time", item.time)
-    intent.putExtra("author", item.author)
-    intent.putExtra("desc", item.description)
-    startActivity(intent)
+    adapter.setOnClickListener(object : AnnActivityRecAdapter.OnItemClickListener {
+      override fun onItemClickListener(announcement: Announcement) {
+        val intent = Intent(this@AnnouncementsActivity, AnnouncementDetail::class.java)
+        intent.putExtra("title", announcement.title)
+        intent.putExtra("time", announcement.time)
+        intent.putExtra("author", announcement.author)
+        intent.putExtra("desc", announcement.description)
+        startActivity(intent)
+      }
+    })
   }
 }

@@ -9,10 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.khacks.kapp_frontend.dataClass.Announcement
-import com.khacks.kapp_frontend.adapters.AnnouncementRecAdapter
 import com.khacks.kapp_frontend.announcement.AnnouncementsActivity
 import com.khacks.kapp_frontend.R.layout
-import com.khacks.kapp_frontend.adapters.AnnouncementRecAdapter.OnDashAnnouncementClickListener
+import com.khacks.kapp_frontend.adapters.DashboardAnnRecAdapter
 import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.dataClass.Article
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
@@ -24,9 +23,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DashboardFragment : Fragment(), OnDashAnnouncementClickListener {
+class DashboardFragment : Fragment() {
 
-  private lateinit var adapter : AnnouncementRecAdapter
+  private lateinit var adapter : DashboardAnnRecAdapter
   val dataSource: ArrayList<Announcement> = ArrayList()
 
   override fun onCreateView(
@@ -65,20 +64,22 @@ class DashboardFragment : Fragment(), OnDashAnnouncementClickListener {
           )
         }
         view.dash_recycler_view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapter = AnnouncementRecAdapter(this@DashboardFragment)
+        view.dash_recycler_view.setHasFixedSize(true)
+        adapter = DashboardAnnRecAdapter()
+        adapter.setAnnouncements(dataSource)
         view.dash_recycler_view.adapter = adapter
-        adapter.submitItems(dataSource.toList())
+        adapter.setOnClickListener(object : DashboardAnnRecAdapter.OnItemClickListener{
+          override fun onItemClickListener(announcement: Announcement) {
+            val intent = Intent(activity, AnnouncementDetail::class.java)
+            intent.putExtra("title", announcement.title)
+            intent.putExtra("time", announcement.time)
+            intent.putExtra("author", announcement.author)
+            intent.putExtra("desc", announcement.description)
+            startActivity(intent)
+          }
+        })
       }
     })
     return view
-  }
-
-  override fun onItemClick(item: Announcement, position: Int) {
-    val intent = Intent(activity, AnnouncementDetail::class.java)
-    intent.putExtra("title", item.title)
-    intent.putExtra("time", item.time)
-    intent.putExtra("author", item.author)
-    intent.putExtra("desc", item.description)
-    startActivity(intent)
   }
 }
