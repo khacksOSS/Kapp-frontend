@@ -1,4 +1,4 @@
-package com.khacks.kapp_frontend.announcement
+package com.khacks.kapp_frontend.dataClass
 
 data class Announcement(
   var tags: List<String>,

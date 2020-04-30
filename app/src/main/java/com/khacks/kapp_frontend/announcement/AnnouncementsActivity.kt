@@ -11,10 +11,11 @@ import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.R.layout
 import com.khacks.kapp_frontend.networking.RetrofitClientInstance
-import com.khacks.kapp_frontend.networking.ServerResponse
+import com.khacks.kapp_frontend.dataClass.ServerResponse
 import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter
 import com.khacks.kapp_frontend.adapters.AnnouncementARecAdapter.OnAnnouncementClickListener
-import com.khacks.kapp_frontend.networking.Article
+import com.khacks.kapp_frontend.dataClass.Announcement
+import com.khacks.kapp_frontend.dataClass.Article
 import kotlinx.android.synthetic.main.activity_announcements.announcements_recycler_view
 import retrofit2.Call
 import retrofit2.Callback

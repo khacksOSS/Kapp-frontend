@@ -1,4 +1,4 @@
-package com.khacks.kapp_frontend.networking
+package com.khacks.kapp_frontend.dataClass
 
 data class Article(
   var tags : List<String>,

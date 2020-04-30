@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.khacks.kapp_frontend.announcement.Announcement
+import com.khacks.kapp_frontend.dataClass.Announcement
 import com.khacks.kapp_frontend.R.layout
 import kotlinx.android.synthetic.main.announcement_dashboard_item.view.tv_date_dash
 import kotlinx.android.synthetic.main.announcement_dashboard_item.view.tv_tag_dash

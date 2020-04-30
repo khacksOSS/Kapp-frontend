@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.khacks.kapp_frontend.R
-import com.khacks.kapp_frontend.welcome.WelcomeSlide
+import com.khacks.kapp_frontend.dataClass.WelcomeSlide
 
 class WelcomeSlideAdapter(private val welcomeSlides: List<WelcomeSlide>)
   : RecyclerView.Adapter<WelcomeSlideAdapter.IntroSlideViewHolder>() {
