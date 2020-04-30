@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.khacks.kapp_frontend.util.A_AUTHOR
+import com.khacks.kapp_frontend.util.A_DESCRIPTION
+import com.khacks.kapp_frontend.util.A_TIME
+import com.khacks.kapp_frontend.util.A_TITLE
 import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.networking.GetAnnouncementService
 import com.khacks.kapp_frontend.R.drawable
@@ -78,10 +82,10 @@ class AnnouncementsActivity : AppCompatActivity() {
     adapter.setOnClickListener(object : AnnActivityRecAdapter.OnItemClickListener {
       override fun onItemClickListener(announcement: Announcement) {
         val intent = Intent(this@AnnouncementsActivity, AnnouncementDetail::class.java)
-        intent.putExtra("title", announcement.title)
-        intent.putExtra("time", announcement.time)
-        intent.putExtra("author", announcement.author)
-        intent.putExtra("desc", announcement.description)
+        intent.putExtra(A_TITLE, announcement.title)
+        intent.putExtra(A_TIME, announcement.time)
+        intent.putExtra(A_AUTHOR, announcement.author)
+        intent.putExtra(A_DESCRIPTION, announcement.description)
         startActivity(intent)
       }
     })
