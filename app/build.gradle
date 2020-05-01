@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion 29
@@ -71,4 +72,8 @@ dependencies {
   // Annotation processor
   annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
   implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+
+  //room
+  implementation "androidx.room:room-runtime:$room_version"
+  kapt "androidx.room:room-compiler:$room_version"
 }
