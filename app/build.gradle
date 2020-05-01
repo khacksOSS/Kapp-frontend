@@ -63,8 +63,6 @@ dependencies {
   implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 
   def lifecycle_version = "2.2.0"
-  def room_version = "2.2.0"
-
   // ViewModel
   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
   // LiveData
@@ -72,8 +70,4 @@ dependencies {
   // Annotation processor
   annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
   implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-
-  //room
-  implementation "androidx.room:room-runtime:$room_version"
-  kapt "androidx.room:room-compiler:$room_version"
 }
