@@ -11,7 +11,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.khacks.kapp_frontend.R
+import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.adapters.WelcomeSlideAdapter
+import com.khacks.kapp_frontend.dataClass.WelcomeSlide
 import com.khacks.kapp_frontend.signin.SignInActivity
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -20,24 +22,24 @@ class WelcomeActivity : AppCompatActivity() {
   private val welcomeSlideAdapter =
     WelcomeSlideAdapter(
         listOf(
-            WelcomeSlide(
-                "We believe in returning to society",
-                "That's why since 2016, we've been a part of programs to educate youth about open source.",
-                R.drawable.welcome_illus_one
-            ),
-            WelcomeSlide(
-                "Of Course, We have Supporters",
-                "We need help too, and our visions would never haven been met if not for our generous supporters.",
-                R.drawable.welcome_illus_two
-            ),
-            WelcomeSlide(
-                "Eight Projects",
-                "Not alot, not little either. We’re proud to have projects " +
-                    "addressing concerns in today's society, from democratic " +
-                    "elections to global warming we " +
-                    "got it covered.",
-                R.drawable.welcome_illus_three
-            )
+          WelcomeSlide(
+            "We believe in returning to society",
+            "That's why since 2016, we've been a part of programs to educate youth about open source.",
+            drawable.welcome_illus_one
+          ),
+          WelcomeSlide(
+            "Of Course, We have Supporters",
+            "We need help too, and our visions would never haven been met if not for our generous supporters.",
+            drawable.welcome_illus_two
+          ),
+          WelcomeSlide(
+            "Eight Projects",
+            "Not alot, not little either. We’re proud to have projects " +
+                "addressing concerns in today's society, from democratic " +
+                "elections to global warming we " +
+                "got it covered.",
+            drawable.welcome_illus_three
+          )
         )
     )
 

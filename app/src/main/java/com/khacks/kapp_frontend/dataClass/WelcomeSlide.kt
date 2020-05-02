@@ -1,4 +1,4 @@
-package com.khacks.kapp_frontend.welcome
+package com.khacks.kapp_frontend.dataClass
 
 data class WelcomeSlide (
   val title: String,
