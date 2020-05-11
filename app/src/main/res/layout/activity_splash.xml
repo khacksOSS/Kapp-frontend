@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/colorPrimary"
     tools:context=".splash.SplashActivity">
 
   <ImageView
-      android:layout_width="220dp"
-      android:layout_height="220dp"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
       android:src="@drawable/karunya_logo"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
