@@ -8,8 +8,8 @@
 
   <ImageView
       android:id="@+id/intro_image"
-      android:layout_width="220dp"
-      android:layout_height="220dp"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
       android:layout_gravity="center_horizontal" />
 
   <TextView
@@ -19,8 +19,9 @@
       android:gravity="center"
       android:textStyle="bold"
       android:textSize="24sp"
+      android:layout_marginTop="8dp"
       android:layout_marginBottom="8dp"
-      android:textColor="@color/black" />
+      android:textColor="@color/colorPrimary" />
 
   <TextView
       android:id="@+id/intro_desc"
@@ -29,5 +30,6 @@
       android:gravity="center"
       android:textSize="16sp"
       android:layout_marginEnd="10dp"
-      android:layout_marginStart="10dp" />
+      android:layout_marginStart="10dp"
+      android:textColor="#849ECD"/>
 </LinearLayout>

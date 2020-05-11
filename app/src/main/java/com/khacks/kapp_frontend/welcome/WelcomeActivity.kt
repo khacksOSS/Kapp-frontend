@@ -23,22 +23,19 @@ class WelcomeActivity : AppCompatActivity() {
     WelcomeSlideAdapter(
         listOf(
           WelcomeSlide(
-            "We believe in returning to society",
-            "That's why since 2016, we've been a part of programs to educate youth about open source.",
-            drawable.welcome_illus_one
+            "Organize Your Work",
+            "Always study well",
+            drawable.work
           ),
           WelcomeSlide(
-            "Of Course, We have Supporters",
-            "We need help too, and our visions would never haven been met if not for our generous supporters.",
-            drawable.welcome_illus_two
+            "Organize Your Work",
+            "Always study well",
+            drawable.work
           ),
           WelcomeSlide(
-            "Eight Projects",
-            "Not alot, not little either. We’re proud to have projects " +
-                "addressing concerns in today's society, from democratic " +
-                "elections to global warming we " +
-                "got it covered.",
-            drawable.welcome_illus_three
+            "Organize Your Work",
+            "Always study well",
+            drawable.work
           )
         )
     )
