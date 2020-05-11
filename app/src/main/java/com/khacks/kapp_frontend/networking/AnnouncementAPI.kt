@@ -4,7 +4,7 @@ import com.khacks.kapp_frontend.dataClass.ServerResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface GetAnnouncementService {
+interface AnnouncementAPI {
   @GET("articles")
-  fun getAllAnnouncements(): Call<ServerResponse>
+  fun getAnnouncementList(): Call<ServerResponse>
 }

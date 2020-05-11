@@ -3,6 +3,10 @@ package com.khacks.kapp_frontend.announcementDetail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
+import com.khacks.kapp_frontend.util.A_AUTHOR
+import com.khacks.kapp_frontend.util.A_DESCRIPTION
+import com.khacks.kapp_frontend.util.A_TIME
+import com.khacks.kapp_frontend.util.A_TITLE
 import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.R.layout
 import kotlinx.android.synthetic.main.activity_announcement_detail.tv_author_content
@@ -19,10 +23,10 @@ class AnnouncementDetail : AppCompatActivity() {
     setContentView(layout.activity_announcement_detail)
     customActionBar()
 
-    tv_author_content.text = intent.getStringExtra("author")
-    tv_time_content.text = intent.getStringExtra("time")
-    tv_title_content.text = intent.getStringExtra("title")
-    tv_desc_content.text = intent.getStringExtra("desc")
+    tv_author_content.text = intent.getStringExtra(A_AUTHOR)
+    tv_time_content.text = intent.getStringExtra(A_TIME)
+    tv_title_content.text = intent.getStringExtra(A_TITLE)
+    tv_desc_content.text = intent.getStringExtra(A_DESCRIPTION)
   }
 
   //function to modify actionbar
