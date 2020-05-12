@@ -21,4 +21,9 @@
   <string name="time">Time</string>
   <string name="desc">Description</string>
   <string name="author">Author</string>
+  <string name="welcome">Welcome</string>
+  <string name="karunya_mobile">Karunya Mobile!</string>
+  <string name="forgot_password">Forgot Password</string>
+  <string name="or">•</string>
+  <string name="guest_login">Guest Login</string>
 </resources>

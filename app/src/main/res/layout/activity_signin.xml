@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".signin.SignInActivity" >
+    tools:context=".signin.SignInActivity"
+    >
 
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,7 @@
         >
 
       <Button
-          android:id="@+id/bt_sigin"
+          android:id="@+id/bt_signin"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginLeft="24dp"
@@ -34,66 +34,151 @@
           android:textColor="@color/white"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/et_signin_password"
+          app:layout_constraintTop_toBottomOf="@id/et_password"
           />
 
-      <ImageView
-          android:id="@+id/login_image"
-          android:layout_width="150dp"
-          android:layout_height="150dp"
-          android:src="@drawable/login_image"
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/header_holder"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          />
+          >
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/et_signin_username"
-          android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/iv_karunya_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/karunya_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/karunya_mobile"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+            />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="16dp"
-          android:layout_marginRight="16dp"
-          android:layout_marginTop="16dp"
-          android:hint="@string/register_number"
-          android:theme="@style/AppTheme"
+          android:layout_marginTop="8dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/login_image"
+          app:layout_constraintTop_toBottomOf="@id/bt_signin"
+          >
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/or"
+            android:textColor="@color/bottomNavGray"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_forgot_password"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_guest_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/guest_login"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_or"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/et_regno"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="24dp"
+          android:layout_marginRight="24dp"
+          android:layout_marginTop="24dp"
+          android:hint="@string/register_number"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/header_holder"
           app:boxStrokeColor="@color/colorPrimary"
-          app:hintTextColor="@color/black"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
           >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/person"
-            android:drawablePadding="8dp"
-            android:maxLines="1"
-            android:padding="16dp"
             />
       </com.google.android.material.textfield.TextInputLayout>
 
       <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/et_signin_password"
+          android:id="@+id/et_password"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="16dp"
-          android:layout_marginRight="16dp"
+          android:layout_marginLeft="24dp"
+          android:layout_marginRight="24dp"
+          android:layout_marginTop="16dp"
           android:hint="@string/password"
-          android:theme="@style/AppTheme"
           app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/et_signin_username"
+          app:layout_constraintTop_toBottomOf="@+id/et_regno"
+          app:boxStrokeColor="@color/colorPrimary"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
           >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/password"
-            android:drawablePadding="8dp"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:padding="16dp"
             />
       </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

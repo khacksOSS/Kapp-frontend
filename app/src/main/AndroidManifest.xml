@@ -18,7 +18,7 @@
     <activity
         android:name=".signin.SignInActivity"
         android:parentActivityName=".welcome.WelcomeActivity"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/CustomAction" />
     <activity android:name=".splash.SplashActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
