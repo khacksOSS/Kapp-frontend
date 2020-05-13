@@ -21,9 +21,8 @@
 
     <ImageView
         android:id="@+id/announcement_ic"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_announcement_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:scaleType="centerInside"
         android:src="@drawable/announcement"
         />
@@ -35,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:text="@string/announcements"
         android:textColor="@color/black"
-        android:textSize="19sp"
+        android:textSize="18sp"
         />
   </LinearLayout>
 
