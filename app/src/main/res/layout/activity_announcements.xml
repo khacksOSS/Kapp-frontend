@@ -27,6 +27,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:checked="true"
+        android:clickable="true"
         android:gravity="center"
         android:text="@string/all"
         android:theme="@style/Theme.MaterialComponents.Light"
