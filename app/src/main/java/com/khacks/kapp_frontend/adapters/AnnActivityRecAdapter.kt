@@ -9,7 +9,6 @@ import com.khacks.kapp_frontend.R
 import com.khacks.kapp_frontend.adapters.AnnActivityRecAdapter.AnnViewHolder
 import com.khacks.kapp_frontend.dataClass.Article
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_date
-import kotlinx.android.synthetic.main.announcement_item.view.tv_a_number
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_tag
 import kotlinx.android.synthetic.main.announcement_item.view.tv_a_title
 
@@ -33,7 +32,6 @@ class AnnActivityRecAdapter : RecyclerView.Adapter<AnnViewHolder>() {
     holder.date.text = currentAnnouncement.time
     holder.title.text = currentAnnouncement.title
     holder.tag.text = currentAnnouncement.tags.get(0)
-    holder.number.text = (position + 1).toString()
   }
 
   fun setAnnouncements(announcements: List<Article>) {
@@ -54,7 +52,6 @@ class AnnActivityRecAdapter : RecyclerView.Adapter<AnnViewHolder>() {
     var date: TextView = itemView.tv_a_date
     var title: TextView = itemView.tv_a_title
     var tag: TextView = itemView.tv_a_tag
-    var number: TextView = itemView.tv_a_number
   }
 
   interface OnItemClickListener {

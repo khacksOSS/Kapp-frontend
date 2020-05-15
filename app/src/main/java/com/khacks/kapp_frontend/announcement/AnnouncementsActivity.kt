@@ -6,7 +6,11 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.khacks.kapp_frontend.util.A_AUTHOR
 import com.khacks.kapp_frontend.util.A_DESCRIPTION
 import com.khacks.kapp_frontend.util.A_TIME
@@ -15,6 +19,7 @@ import com.khacks.kapp_frontend.announcementDetail.AnnouncementDetail
 import com.khacks.kapp_frontend.R.drawable
 import com.khacks.kapp_frontend.R.layout
 import com.khacks.kapp_frontend.adapters.AnnActivityRecAdapter
+import com.khacks.kapp_frontend.adapters.RecyclerViewDecoration
 import com.khacks.kapp_frontend.dataClass.Article
 import kotlinx.android.synthetic.main.activity_announcements.announcements_recycler_view
 
@@ -34,7 +39,6 @@ class AnnouncementsActivity : AppCompatActivity() {
     announcementsViewModel!!.annLiveData.observe(this, Observer {
       adapter.setAnnouncements(it)
     })
-
   }
 
   //function to modify actionbar
@@ -51,6 +55,8 @@ class AnnouncementsActivity : AppCompatActivity() {
     announcements_recycler_view.setHasFixedSize(true)
     adapter = AnnActivityRecAdapter()
     announcements_recycler_view.adapter = adapter
+    val recyclerViewDecoration = RecyclerViewDecoration(30)
+    announcements_recycler_view.addItemDecoration(recyclerViewDecoration)
     adapter.setOnClickListener(object : AnnActivityRecAdapter.OnItemClickListener {
       override fun onItemClickListener(announcement: Article) {
         val intent = Intent(this@AnnouncementsActivity, AnnouncementDetail::class.java)
