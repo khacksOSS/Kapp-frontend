@@ -173,12 +173,14 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/et_regno"
           app:boxStrokeColor="@color/colorPrimary"
+          app:passwordToggleEnabled="true"
           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
           >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             />
       </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

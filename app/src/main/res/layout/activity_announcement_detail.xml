@@ -22,15 +22,18 @@
 
   <TextView
       android:id="@+id/tv_title_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_marginTop="4dp"
       android:text="@string/title"
       android:textColor="@color/bottomNavGray"
       android:textSize="16sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:layout_marginLeft="24dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tv_title"
-      app:layout_constraintLeft_toLeftOf="parent"/>
+      />
 
   <TextView
       android:id="@+id/tv_time"
@@ -46,15 +49,18 @@
 
   <TextView
       android:id="@+id/tv_time_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_marginTop="4dp"
       android:text="@string/time"
       android:textColor="@color/bottomNavGray"
       android:textSize="16sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:layout_marginLeft="24dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tv_time"
-      app:layout_constraintLeft_toLeftOf="parent"/>
+      />
 
   <TextView
       android:id="@+id/tv_desc"
@@ -70,15 +76,18 @@
 
   <TextView
       android:id="@+id/tv_desc_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_marginTop="4dp"
       android:text="@string/desc"
       android:textColor="@color/bottomNavGray"
       android:textSize="16sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:layout_marginLeft="24dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tv_desc"
-      app:layout_constraintLeft_toLeftOf="parent"/>
+      />
 
   <TextView
       android:id="@+id/tv_author"
@@ -94,13 +103,15 @@
 
   <TextView
       android:id="@+id/tv_author_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="24dp"
+      android:layout_marginTop="4dp"
       android:text="@string/author"
       android:textColor="@color/bottomNavGray"
       android:textSize="16sp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:layout_marginLeft="24dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tv_author"
-      app:layout_constraintLeft_toLeftOf="parent"/>
+      />
 </androidx.constraintlayout.widget.ConstraintLayout>
